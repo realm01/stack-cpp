@@ -19,6 +19,12 @@ Stack<T>::Stack(void) {
 }
 
 template <typename T>
+Stack<T>::~Stack(void) {
+  if(first != NULL)
+    delete first;
+}
+
+template <typename T>
 void Stack<T>::push(const T& item) {
   Node* curr_first = first;
   first = new Node(item);
@@ -64,4 +70,10 @@ int Stack<T>::getSize(void) {
 template <typename T>
 Stack<T>::Node::Node(const T& value) {
   item = value;
+}
+
+template <typename T>
+Stack<T>::Node::~Node(void) {
+  if(next_item != NULL)
+    delete next_item;
 }

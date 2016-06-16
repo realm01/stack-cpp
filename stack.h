@@ -27,12 +27,14 @@ class Stack {
 
       public:
         Node(const T& value);
+        ~Node(void);
     };
     Node* first;
     int size;
 
   public:
     Stack(void);
+    ~Stack(void);
     void push(const T& item);
     T pop(void);
     T top(void);
